@@ -1,0 +1,26 @@
+Metodo de la clase Jframe para desabilitar el boton de expandir
+	      this.setResizable(false);
+**********************************************************************
+Poner icon en jframe, sobreescribir y luego indicar la propiedaden el diseño
+	@Override
+	public Image getIconImage() {
+   		Image retValue = Toolkit.getDefaultToolkit().
+         	getImage(ClassLoader.getSystemResource("resources/icono.png"));
+
+   	return retValue;
+	}
+**************************************************************************
+Redimencionar imagenes para labels
+ 	private ImageIcon imagen;
+    	private Icon icono;
+   
+    //Metodo para redimencionar imagenes 
+    public void redimensionarImagenes(JLabel lbl,String ruta){
+        this.imagen=new ImageIcon(ruta);
+        this.icono=new ImageIcon (this.imagen.getImage()
+                .getScaledInstance(lbl.getWidth(), lbl.getHeight(), 
+                Image.SCALE_DEFAULT));//convertir imagen en icono
+        lbl.setIcon(this.icono);
+        this.repaint();
+    }
+

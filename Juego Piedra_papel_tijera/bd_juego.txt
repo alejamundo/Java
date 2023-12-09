@@ -1,0 +1,14 @@
+Base de datos para reto 3
+
+create database bd_juego;
+use bd_juego;
+
+create table usuario
+(doc int primary KEY,
+nombre varchar(50));
+
+create table juego
+(id int primary key AUTO_INCREMENT,
+ ganador varchar(50),
+ doc int,
+ FOREIGN key(doc) REFERENCES usuario(doc));
